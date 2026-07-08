@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+import Navbar from './sections/Navbar.jsx';
 
 function App() {
 
   return (
-    <>
-   <h1>test</h1>
-    </>
+    <main className="max-w-7xl mx-auto relative">
+      <Navbar/>
+    </main>
   )
 }
 
-export default App
+export default App;
