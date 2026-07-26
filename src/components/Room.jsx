@@ -4,12 +4,12 @@ const Room = (props) => {
   const { nodes, materials } = useGLTF('/models/hacker-room.glb');
 
   const monitortxt = useTexture('textures/desk/monitor.png');
-  const screenTxt = useTexture('textures/desk/screen.png');
+  const screenTxt = useTexture('textures/desk/code-screen.png');
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.screen_screens_0.geometry} material={materials.screens}>
-        <meshMatcapMaterial map={screenTxt} />
+      <mesh geometry={nodes.screen_screens_0.geometry}>
+        <meshBasicMaterial map={screenTxt} />
       </mesh>
       <mesh geometry={nodes.screen_glass_glass_0.geometry} material={materials.glass} />
       <mesh geometry={nodes.table_table_mat_0_1.geometry} material={materials.table_mat} />
@@ -31,5 +31,5 @@ const Room = (props) => {
     </group>
   );
 }
-useGLTF.preload('/models/room.glb');
+useGLTF.preload('/models/hacker-room.glb');
 export default Room;
