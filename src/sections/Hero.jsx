@@ -8,6 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 import { calculateSizes } from "../constans";
 import ReactLogo from "../components/ReactLogo";
 import Cube from "../components/cube";
+import HeroCamera from "../components/HeroCamera";
 
 const Hero = () => {
     const isSmall = useMediaQuery({ maxWidth: 440 });
@@ -68,12 +69,14 @@ const Hero = () => {
                     {/* when room is loading  */}
                     <Suspense fallback={<CanvasLoader/>}>        
                         <PerspectiveCamera makeDefault position={[0,0,20]}/>
-                        <Room 
-                            // scale={0.07} 
-                            position={sizes.deskPosition}
-                            rotation={[0, -Math.PI, 0]}
-                            scale={sizes.deskScale}
-                        />
+                        <HeroCamera isMobile={isMobile}>
+                            <Room 
+                                // scale={0.07} 
+                                position={sizes.deskPosition}
+                                rotation={[0, -Math.PI, 0]}
+                                scale={sizes.deskScale}
+                            />
+                        </HeroCamera>
                         <group>
                             <ReactLogo position={sizes.reactLogoPosition} />
                             <Cube position={sizes.cubePosition}/>
