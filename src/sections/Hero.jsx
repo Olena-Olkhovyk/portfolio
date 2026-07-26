@@ -7,6 +7,7 @@ import CanvasLoader from "../components/CanvasLoader";
 import { useMediaQuery } from 'react-responsive';
 import { calculateSizes } from "../constans";
 import ReactLogo from "../components/ReactLogo";
+import Cube from "../components/cube";
 
 const Hero = () => {
     const isSmall = useMediaQuery({ maxWidth: 440 });
@@ -75,6 +76,7 @@ const Hero = () => {
                         />
                         <group>
                             <ReactLogo position={sizes.reactLogoPosition} />
+                            <Cube position={sizes.cubePosition}/>
                         </group>
                         <ambientLight intensity={0.5} />
                         <directionalLight position={[10, 10, 10]} intensity={0.5} />                    
