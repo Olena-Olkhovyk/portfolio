@@ -65,10 +65,11 @@ const Hero = () => {
             </div>
             <div className="w-full h-full absolute inset-0">
                 {/* <Leva/> */}
-                {/* 3d started */}
+                {/* space for 3D scene */}
                 <Canvas className="w-full h-full">
                     {/* when room is loading  */}
-                    <Suspense fallback={<CanvasLoader/>}>        
+                    <Suspense fallback={<CanvasLoader/>}>  
+                        {/* Through camera user "watch" scene */}     
                         <PerspectiveCamera makeDefault position={[0,0,20]}/>
                         <HeroCamera isMobile={isMobile}>
                             <Room 
@@ -78,10 +79,12 @@ const Hero = () => {
                                 scale={sizes.deskScale}
                             />
                         </HeroCamera>
+                        {/* Group almost like div */}  
                         <group>
                             <ReactLogo position={sizes.reactLogoPosition} />
                             <Cube position={sizes.cubePosition}/>
                         </group>
+                        {/* For scene not to be dark */}  
                         <ambientLight intensity={0.5} />
                         <directionalLight position={[10, 10, 10]} intensity={0.5} />                    
                     </Suspense>
