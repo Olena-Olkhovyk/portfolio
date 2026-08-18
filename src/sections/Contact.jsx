@@ -92,7 +92,7 @@ const Contact = () => {
               <input
                 type="email"
                 name="email"
-                value={form.email}
+                value={form.email} 
                 onChange={handleChange}
                 required
                 className="field-input"
