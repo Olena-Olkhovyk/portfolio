@@ -7,7 +7,7 @@ import CanvasLoader from "../components/CanvasLoader";
 import { useMediaQuery } from 'react-responsive';
 import { calculateSizes } from "../constans";
 import ReactLogo from "../components/ReactLogo";
-import Cube from "../components/cube";
+import Cube from "../components/Cube.jsx";
 import HeroCamera from "../components/HeroCamera";
 import Button from '../components/Button.jsx';
 
